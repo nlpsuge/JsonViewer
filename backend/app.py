@@ -1,8 +1,5 @@
-from flask import Flask
+from apis import app_controller
 
-app = Flask(__name__)
 
-def home():
-
-    return "homepage"
-
+if __name__ == '__main__':
+    app_controller.run()

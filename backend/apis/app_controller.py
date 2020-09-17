@@ -1,4 +1,3 @@
-import json
 import traceback
 from datetime import datetime
 
@@ -6,10 +5,19 @@ from benedict import benedict
 from flask import Flask, render_template, jsonify, request
 from flask_cors import CORS
 
-from backend.configs import menus
-from backend.configs.settings import UnixTimestampType
-from backend.model.web_result import WebResult
-from backend.utils import string_utils
+import os
+base_path = os.path.abspath(
+    os.path.dirname(
+        os.path.dirname(
+            os.path.abspath(__file__)
+        )
+    )
+)
+
+from configs import menus
+from configs.settings import UnixTimestampType
+from model.web_result import WebResult
+from utils import string_utils
 
 app = Flask("json_viewer", template_folder="../../frontend/web/htmls")
 
@@ -71,5 +79,10 @@ def get_menus():
     return jsonify(wr.to_json())
 
 
-if __name__ == '__main__':
+def run():
     app.run()
+
+
+if __name__ == '__main__':
+    run()
+

@@ -1,7 +1,7 @@
 import json
 
-from backend.model.base import Base
-from backend.utils import string_utils
+from model.base import Base
+from utils import string_utils
 
 
 class WebResult(Base):
