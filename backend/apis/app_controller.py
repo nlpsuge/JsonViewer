@@ -44,7 +44,7 @@ def update_json():
     request_data = request.get_json()
     original_json = request_data['original_json']
     if string_utils.empty_string(original_json):
-        return jsonify(WebResult.failed(message='The raw json is empty').to_json())
+        return jsonify(WebResult.success('').to_json())
 
     dt = datetime.strptime(date_later_than, "%Y-%m-%d %H:%M:%S.%f")
     if unix_timestamp_type == UnixTimestampType.SECOND:

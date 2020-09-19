@@ -11,7 +11,8 @@
         <SplitGrid class="sb_sub-grid">
           <SplitGridArea>
             <div>
-              <textarea v-model="originalJson" style="resize: none; width: 100%" rows="25"
+              <textarea placeholder="Please paste or input your json data"
+                        v-model="originalJson" style="resize: none; width: 100%" rows="35"
                         v-on:input="getPrettyJson">
 
               </textarea>
