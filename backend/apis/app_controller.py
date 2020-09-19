@@ -19,7 +19,8 @@ from configs.settings import UnixTimestampType
 from model.web_result import WebResult
 from utils import string_utils
 
-app = Flask("json_viewer", template_folder="../../frontend/web/htmls")
+# app = Flask("json_viewer", template_folder="../../frontend/web/htmls")
+app = Flask("json_viewer")
 
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})

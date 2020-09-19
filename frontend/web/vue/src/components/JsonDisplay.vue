@@ -12,7 +12,7 @@
           <SplitGridArea>
             <div>
               <textarea v-model="originalJson" style="resize: none; width: 100%" rows="25"
-                        v-on:keyup="getPrettyJson">
+                        v-on:input="getPrettyJson">
 
               </textarea>
             </div>
