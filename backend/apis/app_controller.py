@@ -24,6 +24,10 @@ app = Flask("json_viewer", template_folder="../../frontend/web/htmls")
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
 
+# https://github.com/pallets/flask/issues/974
+# Prevent the json result to be sorted
+app.config["JSON_SORT_KEYS"] = False
+
 # Only convert the time later than the value of date_later_than
 date_later_than = '2014-01-01 0:0:0.000'
 unix_timestamp_type = UnixTimestampType.SECOND
